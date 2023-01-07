@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    width: 100%;
+    height: auto;
+}
+.navContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.table-index {
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+}
+thead {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid #686161;
+}
+
+thead tr {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 900;
+    column-gap: 10px;
+    width: 100%;
+}
+thead tr td {
+    display: flex;
+    width: 100%;
+}
+td.acc {
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+tbody tr {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    width: 100%;
+}
+tbody tr td {
+    display: flex;
+    width: 100%;
+}
+
+.crudAction {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btn {
+    border-radius: 100px;
+    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+a.btn-Ed {
+    background-color: yellow;
+    color: black;
+}
+
+button.btn-Del {
+    background-color: crimson;
+    color: white;
+}
