@@ -1,7 +1,7 @@
 <x-layouts.app title="Blog" meta-description="Blog meta description">
 
     <div class="flex justify-center item-center mt-5">
-        <strong class="text-lg">Lista de cursos</strong>
+        <strong class="text-lg">Lista de posts</strong>
     </div>
 
     <div class="flex justify-center items-center">
@@ -38,7 +38,7 @@
             </table>
             <div class="flex justify-center item-center"><a
                     class="bg-green-500 text-indigo-50 mt-3 btn btn-primary shadow-sm flex-row"
-                    href="{{ route('posts.create') }}">New post</a></div>
+                    href="{{ route('posts.create') }}">Nuevo post</a></div>
 
         </div>
     </div>
