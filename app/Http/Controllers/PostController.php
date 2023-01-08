@@ -47,7 +47,7 @@ class PostController extends Controller
     }
 
     //Actualizan los post de la base de datos
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
         //Guardar los datos ingresados en el formulario
         $post->update($request->validated());

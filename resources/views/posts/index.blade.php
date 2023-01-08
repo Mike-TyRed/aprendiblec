@@ -1,29 +1,34 @@
 <x-layouts.app title="Blog" meta-description="Blog meta description">
 
-    <h1>Blog</h1>
+    <div class="flex justify-center item-center mt-5">
+        <strong class="text-lg">Lista de cursos</strong>
+    </div>
 
     <div class="flex justify-center items-center">
-        <div class="box-border rounded-lg h-fit w-[40%] p-4 shadow-lg text-lg">
-            <table class="table-index">
-                <thead class="">
+        <div class="rounded-3xl p-10 shadow-lg w-fit text-lg">
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <td class="crudTitle">Titulo</td>
-                        <td class="crudTitle">Contenido</td>
-                        <td class="crudTitle acc">Acciones</td>
+                        <td class="p-3 whitespace-nowrap">Titulo</td>
+                        <td class="p-3 whitespace-nowrap">Contenido</td>
+                        <td class="p-3 whitespace-nowrap">Acciones</td>
                     </tr>
                 </thead>
 
                 <tbody>
                     @foreach ($posts as $post)
                         <tr>
-                            <td>{{ $post->title }}</td>
-                            <td>{{ $post->body }}</td>
-                            <td class="crudAction">
-                                <a class="btn btn-Ed" href="{{ route('posts.edit', $post) }}">Editar</a>
+                            <td class="p-3">{{ $post->title }}</td>
+                            <td class="p-3">{{ $post->body }}</td>
+                            <td class="flex flex-row p-3">
+                                <div><a class="bg-yellow-400 btn btn-primary hover:bg-yellow-500 shadow-sm"
+                                        href="{{ route('posts.edit', $post) }}">Editar</a></div>
                                 <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-Del" type="submit">Eliminar</button>
+                                    <button
+                                        class="bg-red-500 btn btn-primary ml-2 hover:bg-red-700 shadow-sm text-indigo-50"
+                                        type="submit">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
@@ -31,10 +36,11 @@
 
                 </tbody>
             </table>
+            <div class="flex justify-center item-center"><a
+                    class="bg-green-500 text-indigo-50 mt-3 btn btn-primary shadow-sm flex-row"
+                    href="{{ route('posts.create') }}">New post</a></div>
 
         </div>
     </div>
-
-    <a href="{{ route('posts.create') }}">New post</a>
 
 </x-layouts.app>

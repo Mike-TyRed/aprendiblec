@@ -69,7 +69,10 @@ tbody tr td {
     flex-direction: row;
     justify-content: space-around;
 }
-
+td a {
+    display: flex;
+    flex-direction: column;
+}
 .btn {
     border-radius: 100px;
     padding-top: 0.2rem;
