@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    //Protege las rutas para que realice solo ciertas funciones
+    public function __construct(){
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
 
     //Muestra todos los posts
     public function index()
@@ -30,7 +34,7 @@ class PostController extends Controller
         //Guardar los datos ingresados en el formulario
         Post::create($request->validated());
         
-        return to_route('posts.index')->with('status', 'Nuevo post creado correctamente!');
+        return to_route('posts.index')->with('green', 'Nuevo post creado correctamente!');
     }
 
     //Muestra un post en especifico
@@ -52,7 +56,7 @@ class PostController extends Controller
         //Guardar los datos ingresados en el formulario
         $post->update($request->validated());
 
-        return to_route('posts.show', $post)->with('status', 'Post actualizado correctamente!');
+        return to_route('posts.show', $post)->with('yellow', 'Post actualizado correctamente!');
     }
 
     //Elimina un post de la base de datos
@@ -60,6 +64,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return to_route('posts.index')->with('status', 'Post eliminado correctamente!');
+        return to_route('posts.index')->with('red', 'Post eliminado correctamente!');
     }
 }
