@@ -1,14 +1,20 @@
-<input name="title" type="text" placeholder="Title" value="{{ old('title', $post->title) }}">
-
-@error('title')
+<div>
+    <strong for="title">Titulo</strong>
     <br>
-    <small style="color:red">{{ $message }}</small>
-@enderror
+    <input class=" rounded-lg border" name="title" type="text" value="{{ old('title', $post->title) }}">
 
-<br>
-<textarea name="body" type="text" placeholder="Body">{{ old('body', $post->body) }}</textarea>
+    @error('title')
+        <br>
+        <small style="color:red">{{ $message }}</small>
+    @enderror
 
-@error('body')
     <br>
-    <small style="color:red">{{ $message }}</small>
-@enderror
+    <strong>Cuerpo</strong>
+    <br>
+    <textarea class="rounded-lg border" name="body" type="text" placeholder="Body">{{ old('body', $post->body) }}</textarea>
+
+    @error('body')
+        <br>
+        <small style="color:red">{{ $message }}</small>
+    @enderror
+</div>

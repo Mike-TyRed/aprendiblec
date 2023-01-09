@@ -1,20 +1,27 @@
 <x-layouts.app title="Crear nuevo post" meta-description="Formulario para crear nuevo post">
 
-    <h1>New post</h1>
+    <div class="mt-5 flex justify-center items-center">
+        <h1>New post</h1>
+    </div>
 
-    <div>
-        <div>
+    <div class="mt-5 flex justify-center items-center">
+        <div class="rounded-3xl p-10 shadow-lg text-lg">
 
             <form action="{{ route('posts.store') }}" method="POST">
 
                 @csrf
-                
+
                 @include('posts.form')
 
                 <br>
-                <button type="submit">Save</button>
-                <br>
-                <a href="{{ route('posts.index') }}">Return</a>
+                <div class="flex justify-center">
+                    <button class="bg-green-500 hover:bg-green-600 text-indigo-50 mt-2 rounded-xl w-16 shadow-md"
+                        type="submit">Save</button>
+                </div>
+                <div class="flex justify-center">
+                    <a class="bg-gray-500 hover:bg-gray-600 shadow-md mt-2 rounded-xl text-center w-16 text-indigo-50"
+                        href="{{ route('posts.index') }}">Return</a>
+                </div>
 
             </form>
         </div>

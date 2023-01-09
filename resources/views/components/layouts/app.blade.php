@@ -15,7 +15,11 @@
 
     {{-- Muestra un mensaje de post creado --}}
     @if (session('status'))
-        <div>{{ session('status') }}</div>
+        <div class="flex justify-start ml-5 mt-5">
+            <div class="rounded-xl bg-yellow-200 w-fit h-fit p-1 shadow-md">
+                {{ session('status') }}
+            </div>
+        </div>
     @endif
 
     {{-- Muestra el contenido de la pagina --}}
