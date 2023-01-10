@@ -11,7 +11,7 @@
     <br>
     <strong>Cuerpo</strong>
     <br>
-    <textarea class="rounded-lg border" name="body" type="text" placeholder="Body">{{ old('body', $post->body) }}</textarea>
+    <textarea class="rounded-lg border p-3" name="body" type="text">{{ old('body', $post->body) }}</textarea>
 
     @error('body')
         <br>

@@ -9,15 +9,15 @@
 
                 @csrf
 
-                <input class="rounded-lg border flex flex-col mt-4" name="email" type="email" placeholder="email"
+                <input class="rounded-lg border flex flex-col mt-4 indent-2" name="email" type="email" placeholder="Email"
                     autofocus="autofocus" value="{{ old('email') }}">
 
                 @error('email')
                     <small style="color:red">{{ $message }}</small>
                 @enderror
 
-                <input class="rounded-lg border flex flex-col mt-4" name="password" type="password"
-                    placeholder="password" autofocus="autofocus" value="{{ old('password') }}">
+                <input class="rounded-lg border flex flex-col mt-4 indent-2" name="password" type="password"
+                    placeholder="Password" autofocus="autofocus" value="{{ old('password') }}">
 
                 @error('password')
                     <small style="color:red">{{ $message }}</small>
